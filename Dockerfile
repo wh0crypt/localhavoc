@@ -39,5 +39,6 @@ WORKDIR /app
 # Import only compiled binary and data folder
 COPY --from=builder /build/havoc-ts /app/havoc-ts
 COPY --from=builder /build/data /app/data
+COPY --from=builder /build/teamserver/pkg/handlers /app/teamserver/pkg/handlers
 
 EXPOSE 40056
