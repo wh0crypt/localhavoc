@@ -7,6 +7,7 @@ RUN apt update && apt -y install \
     mingw-w64 \
     pkg-config \
     wget \
+    xz-utils \
     && rm -rf /var/lib/apt/lists/*
 
 # Manually install upx
