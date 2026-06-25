@@ -1,0 +1,9 @@
+# Listener & Cloudflare
+C2_DOMAIN="c2.example.com"
+
+# OpCreds (Teamserver)
+OPERATOR_USER="admin"
+OPERATOR_PASS="admin"
+
+# Discord Webhook Config
+DISCORD_WEBHOOK="https://discord.com/api/webhooks/123456/abcdef"
