@@ -1,4 +1,4 @@
-# ---- Phase 1: Compile ----
+# ---- Stage 1: Compile ----
 FROM golang:1.23-bookworm AS builder
 
 RUN apt update && apt -y install \
@@ -25,7 +25,7 @@ RUN cd teamserver/ \
     && sed -i 's/go 1.21.0/go 1.23/' go.mod \
     && go build -v -o /build/havoc-ts main.go
 
-# ---- Phase 2: Execute ----
+# ---- Stage 2: Execute ----
 FROM debian:bookworm-slim
 
 RUN apt update && apt -y install \
