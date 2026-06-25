@@ -1,15 +1,3 @@
-Listeners {
-    Http {
-        Host = "0.0.0.0"
-        PortBind = 80
-        PortConn = 443
-
-        Hosts = [
-            "c2.example.com" # replace with your actual host
-        ]
-    }
-}
-
 Teamserver {
     Host = "0.0.0.0"
     Port = 40056
@@ -38,6 +26,22 @@ WebHook {
 Operators {
     user "admin" {
         Password = "admin"
+    }
+}
+
+Listeners {
+    Http {
+        Name = "Cloudflare HTTP Listener"
+        HostBind = "0.0.0.0"
+        PortBind = 80
+        PortConn = 443
+        HostRotation = "round-robin"
+        Secure = false
+        UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+
+        Hosts = [
+            "c2.example.com" # replace with your actual host
+        ]
     }
 }
 
