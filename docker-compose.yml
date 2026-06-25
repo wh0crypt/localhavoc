@@ -1,0 +1,33 @@
+services:
+  havoc-teamserver:
+    container_name: havoc-teamserver
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./profiles:/app/profiles
+      - havoc-data:/app/data
+    ports:
+      - "40056:40056"
+    networks:
+      - c2-network
+    restart: unless-stopped
+    command: ["server", "--profile", "/app/profiles/default.yaotl", "--debug"]
+
+  cloudflare-tunnel:
+    container_name: havoc-cloudflare-tunnel
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+    depends_on:
+      - havoc-teamserver
+    networks:
+      - c2-network
+
+networks:
+  c2-network:
+    driver: bridge
+
+volumes:
+  havoc-data:
+    driver: local
