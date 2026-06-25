@@ -37,7 +37,7 @@ Listeners {
         PortConn = 443
         HostRotation = "round-robin"
         Secure = false
-        UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
+        UserAgent = "Mozilla/5.0 Windows NT 10.0 Win64 x64 Chrome/120.0.0.0"
 
         Hosts = [
             "{{C2_DOMAIN}}"
