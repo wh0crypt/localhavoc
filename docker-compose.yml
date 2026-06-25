@@ -12,7 +12,7 @@ services:
     networks:
       - c2-network
     restart: unless-stopped
-    command: ["server", "--profile", "/app/profiles/default.yaotl", "--debug"]
+    entrypoint: ["/app/havoc-ts", "server", "--profile", "/app/profiles/default.yaotl", "--debug"]
 
   cloudflare-tunnel:
     container_name: havoc-cloudflare-tunnel

@@ -41,5 +41,3 @@ COPY --from=builder /build/havoc-ts /app/havoc-ts
 COPY --from=builder /build/data /app/data
 
 EXPOSE 40056
-
-ENTRYPOINT ["/app/havoc-ts"]
