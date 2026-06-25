@@ -1,16 +1,13 @@
-Manifest = {
-    Type = "Valid"
-    Name = "Cloudflare Listener"
-}
+Listeners {
+    Http {
+        Host = "0.0.0.0"
+        PortBind = 80
+        PortConn = 443
 
-Http = {
-    Host = "0.0.0.0"
-    PortBind = 80
-    PortConn = 443
-
-    Hosts = [
-        "c2.example.com" # replace with your actual host
-    ]
+        Hosts = [
+            "c2.example.com" # replace with your actual host
+        ]
+    }
 }
 
 Teamserver {
