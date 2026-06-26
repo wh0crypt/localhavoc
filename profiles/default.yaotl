@@ -36,7 +36,7 @@ Listeners {
         PortBind = 80
         PortConn = 443
         HostRotation = "round-robin"
-        Secure = false
+        Secure = true
         UserAgent = "Mozilla/5.0 Windows NT 10.0 Win64 x64 Chrome/120.0.0.0"
 
         Hosts = [
