@@ -33,7 +33,7 @@ Listeners {
     Http {
         Name = "Cloudflare HTTP Listener"
         HostBind = "0.0.0.0"
-        PortBind = 80
+        PortBind = 443
         PortConn = 443
         HostRotation = "round-robin"
         Secure = true
