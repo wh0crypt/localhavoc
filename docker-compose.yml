@@ -17,10 +17,15 @@ services:
   cloudflare-tunnel:
     container_name: havoc-cloudflare-tunnel
     image: cloudflare/cloudflared:latest
+    user: root
     restart: unless-stopped
-    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN} --origin-server-name 0.0.0.0
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
     depends_on:
       - havoc-teamserver
+    environment:
+      - SSL_CERT_FILE=/app/certs/teamserver.crt
+    volumes:
+      - ./profiles/teamserver.crt:/app/certs/teamserver.crt:ro
     networks:
       - c2-network
 
