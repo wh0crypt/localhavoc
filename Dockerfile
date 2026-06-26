@@ -40,5 +40,6 @@ WORKDIR /app
 COPY --from=builder /build/havoc-ts /app/havoc-ts
 COPY --from=builder /build/data /app/data
 COPY --from=builder /build/teamserver/pkg/handlers /app/teamserver/pkg/handlers
+COPY --from=builder /build/payloads /app/payloads
 
 EXPOSE 40056
