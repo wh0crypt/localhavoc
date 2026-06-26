@@ -18,7 +18,7 @@ services:
     container_name: havoc-cloudflare-tunnel
     image: cloudflare/cloudflared:latest
     restart: unless-stopped
-    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN} --origin-server-name 0.0.0.0
     depends_on:
       - havoc-teamserver
     networks:
